@@ -154,7 +154,14 @@ class Calculator {
             let option = new BankProduct(bankProd.bankName, bankProd.investName, bankProd.incomeType, totalSum - deposit.add);
             result.push(option);
         }
-        return result.sort(function (a, b) { return b.totalSum - a.totalSum });
+        let sortedResult = result.sort(function (a, b) { return b.totalSum - a.totalSum });
+        let finalRes = [];
+        for (let el of sortedResult){
+            if (el.totalSum == sortedResult[0].totalSum){
+                finalRes.push(el);
+            } else break;
+        }
+        return finalRes;
     }
 }
 
