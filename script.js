@@ -86,22 +86,13 @@ class Application {
         falseRes.innerHTML = message;
         falseRes.style.display = "block";
         document.getElementById("result").style.display = "none";
-        console.error("Истина где-то рядом!");
         return false;
     }
 
     checkChoosenBankPoducts(arr) {
         if (arr.length != 0) {
             return true;
-        } else this.showWarning("К сожалению, мы не нашли банковских продуктов соответствующих вашим критериям");
-    }
-
-    showWarning(message) {
-        let warningRes = document.getElementById("false-result");
-        warningRes.innerHTML = message;
-        warningRes.style.display = "block";
-        document.getElementById("result").style.display = "none";
-        return false;
+        } else this.showError("К сожалению, мы не нашли банковских продуктов соответствующих вашим критериям");
     }
 }
 
